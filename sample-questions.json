@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "questions": [
+    {
+      "question": "RBI headquarters is located in which city?",
+      "options": ["New Delhi", "Mumbai", "Bengaluru", "Kolkata"],
+      "answerIndex": 1
+    },
+    {
+      "question": "What does CRR stand for in banking?",
+      "options": [
+        "Cash Reserve Ratio",
+        "Credit Risk Return",
+        "Current Reserve Rate",
+        "Capital Recovery Ratio"
+      ],
+      "answerIndex": 0
+    },
+    {
+      "question": "Which bank is known as India's central bank?",
+      "options": ["SBI", "NABARD", "RBI", "PNB"],
+      "answerIndex": 2
+    }
+  ]
+}

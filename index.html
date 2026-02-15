@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bank Exam Mock Test Builder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>🏦 Bank Exam Mock Test</h1>
+    <p>Create your own test set, upload questions, and practice offline.</p>
+  </header>
+
+  <main class="grid">
+    <section class="panel" id="builderPanel">
+      <h2>Question Builder</h2>
+      <form id="questionForm" class="stack">
+        <label>
+          Question
+          <textarea id="questionText" rows="3" required placeholder="Enter question"></textarea>
+        </label>
+
+        <div class="options-grid">
+          <label>Option A <input id="optA" required /></label>
+          <label>Option B <input id="optB" required /></label>
+          <label>Option C <input id="optC" required /></label>
+          <label>Option D <input id="optD" required /></label>
+        </div>
+
+        <label>
+          Correct Option
+          <select id="correctAnswer" required>
+            <option value="">Select answer</option>
+            <option value="0">A</option>
+            <option value="1">B</option>
+            <option value="2">C</option>
+            <option value="3">D</option>
+          </select>
+        </label>
+
+        <div class="button-row">
+          <button type="submit">Add Question</button>
+          <button type="button" id="clearQuestions" class="ghost">Clear All</button>
+        </div>
+      </form>
+
+      <div class="upload box">
+        <h3>Upload Question Set (JSON)</h3>
+        <p class="hint">Import either an array OR an exported object with <code>questions</code>.</p>
+        <label>
+          Import Mode
+          <select id="importMode">
+            <option value="append">Append to existing questions</option>
+            <option value="replace">Replace existing questions</option>
+          </select>
+        </label>
+        <input type="file" id="jsonUpload" accept="application/json" />
+      </div>
+
+      <div class="upload box">
+        <h3>Quick Paste JSON</h3>
+        <textarea id="jsonPaste" rows="4" placeholder='Paste JSON array or {"questions": []}'></textarea>
+        <button type="button" id="importJson" class="secondary">Import JSON</button>
+      </div>
+
+      <div class="upload box">
+        <h3>Starter JSON File</h3>
+        <p class="hint">Download and edit this file, then upload it to run your next test.</p>
+        <a href="sample-questions.json" download>Download sample-questions.json</a>
+      </div>
+    </section>
+
+    <section class="panel" id="testPanel">
+      <h2>Test Console</h2>
+      <div class="stats">
+        <span>Total Questions: <strong id="totalCount">0</strong></span>
+        <span>Current: <strong id="currentNo">0</strong></span>
+        <span>Timer: <strong id="timer">00:00</strong></span>
+      </div>
+
+      <div id="questionCard" class="question-card hidden">
+        <h3 id="questionLabel"></h3>
+        <div id="optionsWrap" class="stack"></div>
+        <div class="button-row">
+          <button id="nextBtn" class="secondary">Next</button>
+          <button id="finishBtn" class="danger">Finish Test</button>
+        </div>
+      </div>
+
+      <div id="emptyState" class="box">
+        <p>No questions yet. Add from builder or upload JSON.</p>
+      </div>
+
+      <div id="resultBox" class="box hidden"></div>
+
+      <div class="button-row">
+        <button id="startTest">Start Test</button>
+        <button id="exportJson" class="ghost">Download Current Set (JSON)</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Local-ready demo for Windows. Data is saved in browser local storage.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
