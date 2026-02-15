@@ -1,0 +1,162 @@
+:root {
+  --bg: #f4f7fc;
+  --panel: #ffffff;
+  --line: #d9e2f0;
+  --primary: #114fbc;
+  --primary-dark: #0b357d;
+  --success: #1a7f37;
+  --danger: #b42318;
+  --text: #0f172a;
+  --muted: #475467;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-header {
+  background: linear-gradient(120deg, #0b357d, #114fbc);
+  color: white;
+  padding: 1.2rem 2rem;
+}
+
+.app-header h1 {
+  margin: 0 0 0.3rem;
+}
+
+.app-header p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgb(15 23 42 / 8%);
+}
+
+.stack {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+input,
+textarea,
+select,
+button {
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  padding: 0.6rem 0.7rem;
+  font-size: 0.95rem;
+}
+
+button {
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+button.secondary {
+  background: #0f766e;
+}
+
+button.ghost {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--text);
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.box {
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 0.7rem;
+  margin-top: 0.8rem;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0;
+}
+
+.stats {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.question-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.option-btn {
+  width: 100%;
+  text-align: left;
+  background: #eef4ff;
+  color: var(--text);
+  border: 1px solid #b8ccf3;
+}
+
+.option-btn.selected {
+  background: #dce9ff;
+  border-color: var(--primary);
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 0 1rem 1rem;
+}
